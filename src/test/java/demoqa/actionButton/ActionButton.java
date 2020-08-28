@@ -4,7 +4,6 @@ import demoqa.WebDriverSettings;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ActionButton extends WebDriverSettings {
 
@@ -13,7 +12,7 @@ public class ActionButton extends WebDriverSettings {
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.doubleClickBtn(actionButtonPage.doubleClickBtn);
-        Assert.assertEquals("You have done a double click",actionButtonPage.successDoubleClickBtnText());
+        Assert.assertEquals("You have done a double click",actionButtonPage.successClickText(actionButtonPage.doubleClickMessage));
     }
 
     @Test
@@ -21,7 +20,7 @@ public class ActionButton extends WebDriverSettings {
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.rightClickBtn(actionButtonPage.rightClickBtn);
-        Assert.assertEquals("You have done a right click",actionButtonPage.successRightClickBtnText());
+        Assert.assertEquals("You have done a right click",actionButtonPage.successClickText(actionButtonPage.rightClickMessage));
     }
 
     @Test
@@ -29,7 +28,7 @@ public class ActionButton extends WebDriverSettings {
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.onceClickBtn(actionButtonPage.dynamicBtn);
-        Assert.assertEquals("You have done a dynamic click",actionButtonPage.successDynamicClickBtn());
+        Assert.assertEquals("You have done a dynamic click",actionButtonPage.successClickText(actionButtonPage.dynamicClickMessage));
     }
 
     @Test
@@ -39,13 +38,48 @@ public class ActionButton extends WebDriverSettings {
         actionButtonPage.doubleClickBtn(actionButtonPage.doubleClickBtn);
         actionButtonPage.rightClickBtn(actionButtonPage.rightClickBtn);
         actionButtonPage.onceClickBtn(actionButtonPage.dynamicBtn);
-        Assert.assertEquals("You have done a double click",actionButtonPage.successDoubleClickBtnText());
-        Assert.assertEquals("You have done a right click",actionButtonPage.successRightClickBtnText());
-        Assert.assertEquals("You have done a dynamic click",actionButtonPage.successDynamicClickBtn());
+        Assert.assertEquals("You have done a double click",actionButtonPage.successClickText(actionButtonPage.doubleClickMessage));
+        Assert.assertEquals("You have done a right click",actionButtonPage.successClickText(actionButtonPage.rightClickMessage));
+        Assert.assertEquals("You have done a dynamic click",actionButtonPage.successClickText(actionButtonPage.dynamicClickMessage));
     }
 
+    @Test
+    public void doubleClickBtnRightClick(){
+        ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
+        actionButtonPage.open();
+        actionButtonPage.rightClickBtn(actionButtonPage.doubleClickBtn);
+        Assert.assertFalse(actionButtonPage.isElementExist(actionButtonPage.doubleClickMessage));
+    }
 
+    @Test
+    public void doubleClickBtnOnceClick(){
+        ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
+        actionButtonPage.open();
+        actionButtonPage.onceClickBtn(actionButtonPage.doubleClickBtn);
+        Assert.assertFalse(actionButtonPage.isElementExist(actionButtonPage.doubleClickMessage));
+    }
 
+    @Test
+    public void rightClickBtnDoubleClick(){
+        ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
+        actionButtonPage.open();
+        actionButtonPage.doubleClickBtn(actionButtonPage.rightClickBtn);
+        Assert.assertFalse(actionButtonPage.isElementExist(actionButtonPage.rightClickMessage));
+    }
 
+    @Test
+    public void rightClickBtnOnceClick(){
+        ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
+        actionButtonPage.open();
+        actionButtonPage.onceClickBtn(actionButtonPage.rightClickBtn);
+        Assert.assertFalse(actionButtonPage.isElementExist(actionButtonPage.rightClickMessage));
+    }
 
+    @Test
+    public void onceClickBtnRightClick(){
+        ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
+        actionButtonPage.open();
+        actionButtonPage.rightClickBtn(actionButtonPage.dynamicBtn);
+        Assert.assertFalse(actionButtonPage.isElementExist(actionButtonPage.dynamicClickMessage));
+    }
 }

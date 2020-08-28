@@ -12,10 +12,10 @@ public class RadioButtonPage {
     private WebDriverWait wait;
 
     @FindBy(css = "[for=\"yesRadio\"]")
-    private WebElement yesRadioButton;
+    WebElement yesRadioButton;
 
     @FindBy(css="[for=\"impressiveRadio\"]")
-    private WebElement impressiveRadioButton;
+    WebElement impressiveRadioButton;
 
     @FindBy(css="[for=\"noRadio\"]")
     private WebElement noRadioButtonText;
@@ -35,14 +35,9 @@ public class RadioButtonPage {
         driver.get("https://demoqa.com/radio-button");
     }
 
-    public void clickYesRadioButton(){
-        wait.until(ExpectedConditions.visibilityOf(yesRadioButton));
-        yesRadioButton.click();
-    }
-
-    public void clickImpressiveRadioButton(){
-        wait.until(ExpectedConditions.visibilityOf(impressiveRadioButton));
-        impressiveRadioButton.click();
+    public void clickRadioButton(WebElement button){
+        wait.until(ExpectedConditions.visibilityOf(button));
+        button.click();
     }
 
     public boolean enableNoRadioButton(){

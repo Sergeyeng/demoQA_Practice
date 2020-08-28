@@ -11,7 +11,7 @@ public class RadioButton extends WebDriverSettings {
     public void radioButtonYes() {
         RadioButtonPage radioButtonPage = PageFactory.initElements(driver,RadioButtonPage.class);
         radioButtonPage.open();
-        radioButtonPage.clickYesRadioButton();
+        radioButtonPage.clickRadioButton(radioButtonPage.yesRadioButton);
         Assert.assertEquals("Yes",radioButtonPage.successFieldText());
     }
 
@@ -19,7 +19,7 @@ public class RadioButton extends WebDriverSettings {
     public void radioButtonImpressive() {
         RadioButtonPage radioButtonPage = PageFactory.initElements(driver,RadioButtonPage.class);
         radioButtonPage.open();
-        radioButtonPage.clickImpressiveRadioButton();
+        radioButtonPage.clickRadioButton(radioButtonPage.impressiveRadioButton);
         Assert.assertEquals("Impressive", radioButtonPage.successFieldText());
     }
 

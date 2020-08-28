@@ -1,5 +1,6 @@
 package demoqa.actionButton;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -19,17 +20,17 @@ public class ActionButtonPage {
     @FindBy(id = "rightClickBtn")
     WebElement rightClickBtn;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[2]/div[1]/div[3]/button") //fix this
+    @FindBy(xpath = "//button[text()='Click Me']")
     WebElement dynamicBtn;
 
     @FindBy(id = "doubleClickMessage")
-    private WebElement doubleClickMessage;
+    WebElement doubleClickMessage;
 
     @FindBy(id = "rightClickMessage")
-    private WebElement rightClickMessage;
+    WebElement rightClickMessage;
 
     @FindBy(id = "dynamicClickMessage")
-    private WebElement dynamicClickMessage;
+    WebElement dynamicClickMessage;
 
     public ActionButtonPage(WebDriver driver){
         this.driver = driver;
@@ -56,18 +57,20 @@ public class ActionButtonPage {
         button.click();
     }
 
-    public String successDoubleClickBtnText(){
-        wait.until(ExpectedConditions.visibilityOf(doubleClickMessage));
-        return doubleClickMessage.getText();
+    public String successClickText(WebElement buttonText){
+        wait.until(ExpectedConditions.visibilityOf(buttonText));
+        return buttonText.getText();
     }
 
-    public String successRightClickBtnText(){
-        wait.until(ExpectedConditions.visibilityOf(rightClickBtn));
-        return rightClickMessage.getText();
+    public Boolean isElementExist(WebElement successText){
+        Boolean elementExist = false;
+        try{
+            elementExist = successText.isDisplayed();
+        }
+        catch (NoSuchElementException e){
+            return elementExist;
+        }
+        return elementExist;
     }
 
-    public String successDynamicClickBtn(){
-        wait.until(ExpectedConditions.visibilityOf(dynamicClickMessage));
-        return dynamicClickMessage.getText();
-    }
 }

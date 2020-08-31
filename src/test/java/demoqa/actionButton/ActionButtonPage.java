@@ -32,45 +32,44 @@ public class ActionButtonPage {
     @FindBy(id = "dynamicClickMessage")
     WebElement dynamicClickMessage;
 
-    public ActionButtonPage(WebDriver driver){
+    public ActionButtonPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(driver, 10);
         action = new Actions(driver);
     }
 
-    public void open(){
+    public void open() {
         driver.get("https://demoqa.com/buttons");
     }
 
-    public void doubleClickBtn(WebElement button){
+    public void doubleClickBtn(WebElement button) {
         wait.until(ExpectedConditions.visibilityOf(button));
         action.doubleClick(button).perform();
     }
 
-    public void rightClickBtn(WebElement button){
+    public void rightClickBtn(WebElement button) {
         wait.until(ExpectedConditions.visibilityOf(button));
         action.contextClick(button).perform();
     }
 
-    public void onceClickBtn(WebElement button){
+    public void onceClickBtn(WebElement button) {
         wait.until(ExpectedConditions.visibilityOf(button));
         button.click();
     }
 
-    public String successClickText(WebElement buttonText){
+    public String successClickText(WebElement buttonText) {
         wait.until(ExpectedConditions.visibilityOf(buttonText));
         return buttonText.getText();
     }
 
-    public Boolean isElementExist(WebElement successText){
-        Boolean elementExist = false;
-        try{
-            elementExist = successText.isDisplayed();
+    public Boolean isElementExist(WebElement successText) {
+
+        try {
+            successText.isDisplayed();
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
         }
-        catch (NoSuchElementException e){
-            return elementExist;
-        }
-        return elementExist;
     }
 
 }

@@ -35,7 +35,6 @@ public class DynamicPropertiesPage {
     public void enableBtnAfterTime(long miliseconds) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOf(colorChangeBtn));
         Thread.sleep(miliseconds);
-
     }
 
     public Boolean isElementExist(WebElement button) {

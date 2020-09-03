@@ -2,20 +2,11 @@ package demoqa.links;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.logging.LogEntries;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.Iterator;
 import java.util.Set;
-import java.util.logging.Level;
 
 public class LinksPage {
 
@@ -76,10 +67,7 @@ public class LinksPage {
         String parent = driver.getWindowHandle();
         Set<String> s = driver.getWindowHandles();
 
-        Iterator<String> I1 = s.iterator();
-
-        while (I1.hasNext()) {
-            String child_window = I1.next();
+        for (String child_window : s) {
             if (!parent.equals(child_window)) {
                 driver.switchTo().window(child_window);
             }

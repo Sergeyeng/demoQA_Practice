@@ -32,9 +32,9 @@ public class DynamicPropertiesPage {
         driver.get("https://demoqa.com/dynamic-properties");
     }
 
-    public void enableBtnAfterTime(long miliseconds) throws InterruptedException {
+    public void enableBtnAfterTime(long milliseconds) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOf(colorChangeBtn));
-        Thread.sleep(miliseconds);
+        Thread.sleep(milliseconds);
     }
 
     public Boolean isElementExist(WebElement button) {

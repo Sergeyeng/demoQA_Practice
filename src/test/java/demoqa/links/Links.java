@@ -1,11 +1,20 @@
 package demoqa.links;
 
+/*
+ * Tests on page https://demoqa.com/links
+ */
+
 import demoqa.WebDriverSettings;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.support.PageFactory;
 
 public class Links extends WebDriverSettings {
+
+    /*
+     * Click on link "Home"
+     * Check url in new window
+     */
 
     @Test
     public void clickOnSimleLink(){
@@ -17,6 +26,11 @@ public class Links extends WebDriverSettings {
         Assert.assertEquals("https://demoqa.com/",homePage.getCurrentUrl(homePage.homePageBanner));
     }
 
+    /*
+     * Click on link with dynamic text
+     * Check url in new window
+     */
+
     @Test
     public void clickOnDynamicLink(){
         LinksPage linksPage = PageFactory.initElements(driver,LinksPage.class);
@@ -27,6 +41,11 @@ public class Links extends WebDriverSettings {
         Assert.assertEquals("https://demoqa.com/",homePage.getCurrentUrl(homePage.homePageBanner));
     }
 
+    /*
+     * Click on link "Created"
+     * Check text
+     */
+
     @Test
     public void clickOnCreatedLink(){
         LinksPage linksPage = PageFactory.initElements(driver,LinksPage.class);
@@ -34,6 +53,11 @@ public class Links extends WebDriverSettings {
         linksPage.clickOnLink(linksPage.createdLink);
         Assert.assertEquals("201",linksPage.checkRequest());
     }
+
+    /*
+     * Click on link "No Content"
+     * Check text
+     */
 
     @Test
     public void clickOnNoContentLink(){
@@ -43,6 +67,11 @@ public class Links extends WebDriverSettings {
         Assert.assertEquals("204",linksPage.checkRequest());
     }
 
+    /*
+     * Click on link "Moved"
+     * Check text
+     */
+
     @Test
     public void clickOnMovedLink(){
         LinksPage linksPage = PageFactory.initElements(driver,LinksPage.class);
@@ -50,6 +79,11 @@ public class Links extends WebDriverSettings {
         linksPage.clickOnLink(linksPage.movedLink);
         Assert.assertEquals("301",linksPage.checkRequest());
     }
+
+    /*
+     * Click on link "Bad Request"
+     * Check text
+     */
 
     @Test
     public void clickOnBadRequestLink(){
@@ -59,6 +93,11 @@ public class Links extends WebDriverSettings {
         Assert.assertEquals("400",linksPage.checkRequest());
     }
 
+    /*
+     * Click on link "Unauthorized"
+     * Check text
+     */
+
     @Test
     public void clickOnUnauthorizedLink(){
         LinksPage linksPage = PageFactory.initElements(driver,LinksPage.class);
@@ -67,6 +106,11 @@ public class Links extends WebDriverSettings {
         Assert.assertEquals("401",linksPage.checkRequest());
     }
 
+    /*
+     * Click on link "Forbidden"
+     * Check text
+     */
+
     @Test
     public void clickOnForbiddenLink(){
         LinksPage linksPage = PageFactory.initElements(driver,LinksPage.class);
@@ -74,6 +118,11 @@ public class Links extends WebDriverSettings {
         linksPage.clickOnLink(linksPage.forbiddenLink);
         Assert.assertEquals("403",linksPage.checkRequest());
     }
+
+    /*
+     * Click on link "Not Found"
+     * Check text
+     */
 
     @Test
     public void clickOnNotFoundLink(){

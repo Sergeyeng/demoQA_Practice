@@ -59,7 +59,7 @@ public class AlertsPage {
     }
 
     /*
-     * Get text in alert
+     * Get text of alert
      */
 
     public String confimAlertByText(){
@@ -68,7 +68,7 @@ public class AlertsPage {
     }
 
     /*
-     * Get text after confim alert
+     * Get text after confirm alert
      */
 
     public String textAfterAcceptAlert(WebElement text){
@@ -82,7 +82,7 @@ public class AlertsPage {
      * Get text after dismiss alert
      */
 
-    public String textAfterDismissAlert(WebElement text){ // can rewrite using if for accept and dismiss alert
+    public String textAfterDismissAlert(WebElement text){ // rewrite using if for accept and dismiss alert
         wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().dismiss();
         wait.until(ExpectedConditions.visibilityOf(text));

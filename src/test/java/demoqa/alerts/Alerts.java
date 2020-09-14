@@ -70,7 +70,7 @@ public class Alerts extends WebDriverSettings {
     }
 
     /*
-     * Click on button calling  alert after 5 sec
+     * Click on button "Alert after 5 sec"
      * Wait 5 sec
      * Check enable of alert
      */
@@ -84,7 +84,7 @@ public class Alerts extends WebDriverSettings {
     }
 
     /*
-     * Click on button calling  alert after 5 sec
+     * Click on button "Alert after 5 sec"
      * Wait 7 sec
      * Check enable of alert
      */
@@ -98,7 +98,7 @@ public class Alerts extends WebDriverSettings {
     }
 
     /*
-     * Click on button calling  alert after 5 sec
+     * Click on button "Alert after 5 sec"
      * Wait 3 sec
      * Check disable of alert
      */

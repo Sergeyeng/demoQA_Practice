@@ -1,5 +1,10 @@
 package demoqa.brokenLinkAndImage;
 
+/*
+ * Tests on page https://demoqa.com/broken
+ */
+
+
 import demoqa.WebDriverSettings;
 import org.junit.Assert;
 import org.junit.Test;

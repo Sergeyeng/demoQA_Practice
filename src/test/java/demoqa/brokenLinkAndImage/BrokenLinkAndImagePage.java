@@ -18,16 +18,16 @@ public class BrokenLinkAndImagePage {
     private WebDriverWait wait;
 
 
-    @FindBy(xpath = "//img[1]")
+    @FindBy(xpath = "//img[1]")  // Correct image
     WebElement correctImage;
 
-    @FindBy(xpath = "//img[2]")
+    @FindBy(xpath = "//img[2]")  // Brocken image
     WebElement brockenImage;
 
-    @FindBy(xpath = "//a[1]")
+    @FindBy(xpath = "//a[1]")    // Correct link
     WebElement correctLink;
 
-    @FindBy(xpath="//a[2]")
+    @FindBy(xpath="//a[2]")      // Brocken link
     WebElement brockenLink;
 
     @FindBy(xpath = "//body") // For waiting page, in real cases we should wait for real element
@@ -46,10 +46,18 @@ public class BrokenLinkAndImagePage {
         driver.get("https://demoqa.com/broken");
     }
 
+    /*
+     * Get image height and width, return like 100x100
+     */
+
     public String getImageHeightAndWidth(WebElement image){
         wait.until(ExpectedConditions.visibilityOf(image));
         return image.getSize().width +"x"+ image.getSize().height;
     }
+
+    /*
+     * Get url after click on on link
+     */
 
     public String getUrlAfterClickOnLink(WebElement link){
         wait.until(ExpectedConditions.visibilityOf(link));

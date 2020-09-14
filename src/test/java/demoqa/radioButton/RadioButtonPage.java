@@ -17,16 +17,16 @@ public class RadioButtonPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    @FindBy(css = "[for=\"yesRadio\"]")  // Active element on radio button "Yes"
+    @FindBy(css = "[for=\"yesRadio\"]")  // Active element of radio button "Yes"
     WebElement yesRadioButton;
 
-    @FindBy(css="[for=\"impressiveRadio\"]") // Active element on radio button "Impressive"
+    @FindBy(css="[for=\"impressiveRadio\"]") // Active element of radio button "Impressive"
     WebElement impressiveRadioButton;
 
-    @FindBy(css="[for=\"noRadio\"]")  // Active element on radio button "No", element always disable
+    @FindBy(css="[for=\"noRadio\"]")  // Active element of radio button "No", element always disable
     private WebElement noRadioButtonText;
 
-    @FindBy(id="noRadio")  // Element with text on radio button "No"
+    @FindBy(id="noRadio")  // Element with text of radio button "No"
     private WebElement noRadioButtonActionField;
 
     @FindBy(css = "[class=\"text-success\"]") // Element with text indicating the passing of the test
@@ -55,7 +55,7 @@ public class RadioButtonPage {
     }
 
     /*
-     * Check enable of element
+     * Check enable of radio button "No"
      */
 
     public boolean enableNoRadioButton(){

@@ -11,12 +11,12 @@ import org.openqa.selenium.support.PageFactory;
 public class ActionButton extends WebDriverSettings {
 
     /*
-     * Click on button "Double Click Me"
-     * Observe required text
+     * Click on button "Double Click Me" using double click
+     * Observe text after click
      */
 
     @Test
-    public void doubleClickBtnCorrectClick(){
+    public void correctClickOnDoubleClickBtn(){
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.doubleClickBtn(actionButtonPage.doubleClickBtn);
@@ -24,12 +24,12 @@ public class ActionButton extends WebDriverSettings {
     }
 
     /*
-     * Click on button "Right Click Me"
-     * Observe required text
+     * Click on button "Right Click Me" using right click
+     * Observe text after click
      */
 
     @Test
-    public void rightClickBtnCorrectClick(){
+    public void correctClickOnRightClickBtn(){
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.rightClickBtn(actionButtonPage.rightClickBtn);
@@ -37,12 +37,12 @@ public class ActionButton extends WebDriverSettings {
     }
 
     /*
-     * Click on button "Click Me"
-     * Observe required text
+     * Click on button "Click Me" using once click
+     * Observe text after click
      */
 
     @Test
-    public void dynamicClickBtnCorrectClick(){
+    public void correctClickOnOnceClickBtn(){
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.onceClickBtn(actionButtonPage.dynamicBtn);
@@ -50,12 +50,12 @@ public class ActionButton extends WebDriverSettings {
     }
 
     /*
-     * Click on all buttons on page
-     * Observe all texts
+     * Click on all buttons on page using right methods
+     * Observe all text after clicks
      */
 
     @Test
-    public void allButtonsClick(){
+    public void correctClickOnAllBtns(){
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.doubleClickBtn(actionButtonPage.doubleClickBtn);
@@ -72,7 +72,7 @@ public class ActionButton extends WebDriverSettings {
      */
 
     @Test
-    public void doubleClickBtnRightClick(){
+    public void doubleClickBtnUsingRightClick(){
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.rightClickBtn(actionButtonPage.doubleClickBtn);
@@ -85,7 +85,7 @@ public class ActionButton extends WebDriverSettings {
      */
 
     @Test
-    public void doubleClickBtnOnceClick(){
+    public void doubleClickBtnUsingOnceClick(){
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.onceClickBtn(actionButtonPage.doubleClickBtn);
@@ -98,7 +98,7 @@ public class ActionButton extends WebDriverSettings {
      */
 
     @Test
-    public void rightClickBtnDoubleClick(){
+    public void rightClickBtnUsingDoubleClick(){
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.doubleClickBtn(actionButtonPage.rightClickBtn);
@@ -111,7 +111,7 @@ public class ActionButton extends WebDriverSettings {
      */
 
     @Test
-    public void rightClickBtnOnceClick(){
+    public void rightClickBtnUsingOnceClick(){
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.onceClickBtn(actionButtonPage.rightClickBtn);
@@ -124,7 +124,7 @@ public class ActionButton extends WebDriverSettings {
      */
 
     @Test
-    public void onceClickBtnRightClick(){
+    public void onceClickBtnUsingRightClick(){
         ActionButtonPage actionButtonPage = PageFactory.initElements(driver,ActionButtonPage.class);
         actionButtonPage.open();
         actionButtonPage.rightClickBtn(actionButtonPage.dynamicBtn);

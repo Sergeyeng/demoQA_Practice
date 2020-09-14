@@ -12,10 +12,10 @@ public class RadioButton extends WebDriverSettings {
 
     /*
      * Click on "Yes" radio button
-     * Observe required text
+     * Observe text after click
      */
     @Test
-    public void radioButtonYes() {
+    public void clickYesRadioButton() {
         RadioButtonPage radioButtonPage = PageFactory.initElements(driver,RadioButtonPage.class);
         radioButtonPage.open();
         radioButtonPage.clickRadioButton(radioButtonPage.yesRadioButton);
@@ -24,10 +24,10 @@ public class RadioButton extends WebDriverSettings {
 
     /*
      * Click on "Impressive" radio button
-     * Observe required text
+     * Observe text after click
      */
     @Test
-    public void radioButtonImpressive() {
+    public void clickImpressiveRadioButton() {
         RadioButtonPage radioButtonPage = PageFactory.initElements(driver,RadioButtonPage.class);
         radioButtonPage.open();
         radioButtonPage.clickRadioButton(radioButtonPage.impressiveRadioButton);

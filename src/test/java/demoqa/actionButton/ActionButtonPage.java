@@ -53,7 +53,7 @@ public class ActionButtonPage {
     }
 
     /*
-     * Click on button
+     * Click on button with double click
      */
 
     public void doubleClickBtn(WebElement button) {
@@ -61,16 +61,24 @@ public class ActionButtonPage {
         action.doubleClick(button).perform();
     }
 
+    /*
+     * Click on button with right button click
+     */
 
-    public void rightClickBtn(WebElement button) {  // DELETE! Use only one function for all buttons
+    public void rightClickBtn(WebElement button) {
         wait.until(ExpectedConditions.visibilityOf(button));
         action.contextClick(button).perform();
     }
 
-    public void onceClickBtn(WebElement button) { // DELETE! Use only one function for all buttons
+    /*
+     * Click on button with once click
+     */
+
+    public void onceClickBtn(WebElement button) {
         wait.until(ExpectedConditions.visibilityOf(button));
         button.click();
     }
+    // all 3 functions can be in one function using if statement
 
     /*
      * Get text after click on button

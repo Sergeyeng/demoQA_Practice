@@ -12,6 +12,7 @@ import demoqa.brokenLinkAndImage.BrokenLinkAndImage;
 import demoqa.dynamicProperties.DynamicProperties;
 import demoqa.links.Links;
 import demoqa.radioButton.RadioButton;
+import demoqa.slider.Slider;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -24,7 +25,8 @@ import org.junit.runners.Suite;
         BrokenLinkAndImage.class,
         DynamicProperties.class,
         Links.class,
-        RadioButton.class
+        RadioButton.class,
+        Slider.class
 })
 
 public class TestSuite {

@@ -20,10 +20,8 @@ public class SliderPage {
     private WebDriverWait wait;
     private Action action;
 
-    @FindBy(xpath = "//*[@id=\"sliderContainer\"]/div[1]/span/div") // Cursor, rewrite
+    @FindBy(xpath = "//*[@id=\"sliderContainer\"]/div[1]/span/input") // Cursor !!rewrite
     WebElement sliderCursor;
-
-    //#sliderContainer > div.col-9 > span > input
 
     @FindBy(xpath ="//input") // Slider value on slider
     WebElement sliderValueOnSlider;
@@ -54,6 +52,16 @@ public class SliderPage {
         return element.getAttribute("value");
     }
 
-//    public void moveElement(int move){
-//    }
+    /*
+     * Move slider
+     */
+
+    public void moveElement(int movement){
+        wait.until(ExpectedConditions.visibilityOf(sliderCursor));
+        Actions move = new Actions(driver);
+        move.moveToElement(sliderCursor)
+                .dragAndDropBy(sliderCursor,movement,0)
+                .build()
+                .perform();
+    }
 }
